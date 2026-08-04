@@ -1,0 +1,63 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <!-- The window shell/backdrop is declared here; all inner controls are built
+       in Config.lua (StaticImageConfig_OnLoad) for maintainability. -->
+  <Script file="Config.lua"/>
+  <Frame name="StaticImageConfigFrame" parent="UIParent" hidden="true" movable="true" enableMouse="true" frameStrata="DIALOG">
+    <Size>
+      <AbsDimension x="640" y="480"/>
+    </Size>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+      <BackgroundInsets>
+        <AbsInset left="11" right="12" top="12" bottom="11"/>
+      </BackgroundInsets>
+      <TileSize>
+        <AbsValue val="32"/>
+      </TileSize>
+      <EdgeSize>
+        <AbsValue val="32"/>
+      </EdgeSize>
+    </Backdrop>
+    <Layers>
+      <Layer level="ARTWORK">
+        <FontString name="$parentTitle" inherits="GameFontNormalLarge" text="StaticImage">
+          <Anchors>
+            <Anchor point="TOP">
+              <Offset>
+                <AbsDimension x="0" y="-16"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <Button name="$parentClose" inherits="UIPanelCloseButton">
+        <Anchors>
+          <Anchor point="TOPRIGHT">
+            <Offset>
+              <AbsDimension x="-6" y="-6"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+      </Button>
+    </Frames>
+    <Scripts>
+      <OnLoad>
+        this:RegisterForDrag("LeftButton")
+        StaticImageConfig_OnLoad()
+      </OnLoad>
+      <OnDragStart>
+        this:StartMoving()
+      </OnDragStart>
+      <OnDragStop>
+        this:StopMovingOrSizing()
+      </OnDragStop>
+      <OnShow>
+        StaticImageConfig_Refresh()
+      </OnShow>
+    </Scripts>
+  </Frame>
+</Ui>

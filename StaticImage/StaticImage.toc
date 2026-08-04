@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: StaticImage
+## Notes: Display and manage custom images on your UI (WeakAuras-style).
+## Author: norabu
+## Version: 1.0
+## SavedVariables: StaticImageDB
+
+Core.lua
+Display.lua
+Config.xml
