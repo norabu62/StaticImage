@@ -1,6 +1,6 @@
 ## Interface: 11200
 ## Title: StaticImage
-## Notes: Display and manage custom images on your UI (WeakAuras-style).
+## Notes: Display and manage custom images on your UI
 ## Author: norabu
 ## Version: 1.0
 ## SavedVariables: StaticImageDB
